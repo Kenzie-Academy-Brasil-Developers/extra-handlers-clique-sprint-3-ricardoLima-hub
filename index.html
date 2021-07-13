@@ -15,6 +15,7 @@
         <h2>1. Color changer</h2>
         <button id="gray_button">Gray</button>
         <button id="blue_button">Blue</button>
+        <button id="pink_button">Pink</button>
         <div id="color_box" class="gray"></div>        
         <script>
             const color_box = document.getElementById("color_box");
@@ -29,11 +30,10 @@
                 color_box.className = "blue";
             };
 
-            /* TODO 1
-             *
-             *  Adicionar um botão e um event handler 
-             *  e o botão torna o quadrado rosa.
-             */
+            const pink_button = document.getElementById("pink_button")
+            pink_button.onclick =  () => {
+                color_box.className = "pink"
+            }
         </script>
 
         <hr>
@@ -46,13 +46,9 @@
             const countspan = document.getElementById("countspan");
             
             const counter_button = document.getElementById("counter_button");
-            counter_button.onclick = function() {
-                /* TODO 2
-                 *
-                 *  A função incrementa 1 em um contador "count", 
-                 *  atualiza o conteúdo de texto do "countspan" 
-                 *  e mostra o valor atual de "count".
-                 */
+            counter_button.onclick = () => {
+                count++
+                countspan.innerHTML = count;
             }
         </script>
 
@@ -62,12 +58,12 @@
         <button id="even_or_odd_button">Is the count even or odd?</button>
         <script>
             const even_or_odd_button = document.getElementById("even_or_odd_button");
-            even_or_odd_button.onclick = function() {
-                /* TODO 3
-                 *
-                 * A função mostra um "alert dialog" mostrando se o contador 
-                 * (da segunda tarefa (TODO 2)) é par ou impar.
-                 */
+            even_or_odd_button.onclick = () => {
+               if (count % 2 === 0){
+                   alert("Is Even!")
+               } else {
+                   alert("Is Odd!")
+               }
             }
         </script>
     </body>
